@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom Website</title>
+  <style>
+    /* Inline CSS */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Fullscreen video background */
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    /* Navigation bar */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      z-index: 1;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #ff69b4;
+    }
+
+    /* Section styles */
+    section {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    #section1 { background: rgba(0, 0, 0, 0.4); }
+    #section2 { background: rgba(0, 0, 0, 0.5); }
+    #section3 { background: rgba(0, 0, 0, 0.6); }
+
+  </style>
+</head>
+<body>
+  <!-- Video Background -->
+  <video autoplay muted loop class="video-bg">
+    <source src="ai.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#section1">Home</a></li>
+      <li><a href="#section2">Features</a></li>
+      <li><a href="#section3">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Content Sections -->
+  <section id="section1">
+    <h1>Welcome to Bloom</h1>
+    <p>Experience the beauty of creativity.</p>
+  </section>
+  <section id="section2">
+    <h1>Our Features</h1>
+    <p>Discover a world of innovation and design.</p>
+  </section>
+  <section id="section3">
+    <h1>Contact Us</h1>
+    <p>Let's make something amazing together.</p>
+  </section>
+
+  <!-- JavaScript for smooth scrolling -->
+  <script>
+    document.querySelectorAll('nav ul li a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
+
